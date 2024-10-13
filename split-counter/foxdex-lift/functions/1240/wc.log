@@ -1,0 +1,28 @@
+Function entry:             1240
+Verification result:        Verified
+#instructions:              13
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    2
+#edges:                     1
+
+
+
+Return behavior: returning with
+RIP := [RSP_0x1240_0, 8]_0
+RAX := Bot[c|printf|]
+RDX := RDI_0
+RDI := 0x201d
+RSI := RSI_0
+RSP := (RSP_0x1240_0 + 8)
+RBP := RBP_0
+[RSP_0x1240,8] := [RSP_0x1240_0, 8]_0
+[RSP_0x1240 - 0x18,8] := RSI_0
+[RSP_0x1240 - 0x10,8] := RDI_0
+[RSP_0x1240 - 0x8,8] := RBP_0
+
+
+
+
+

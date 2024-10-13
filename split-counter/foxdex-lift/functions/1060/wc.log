@@ -1,0 +1,24 @@
+Function entry:             1060
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+INITIAL:
+Stateparts:
+RSI == 0x2004
+
+Return behavior: returning with
+RIP := [RSP_fopen_0, 8]_0
+RAX := malloc@1060()
+RSI := 0x2004
+RSP := (RSP_fopen_0 + 8)
+[RSP_fopen,8] := [RSP_fopen_0, 8]_0
+
+
+
+
+

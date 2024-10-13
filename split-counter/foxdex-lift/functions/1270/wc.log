@@ -1,0 +1,36 @@
+Function entry:             1270
+Verification result:        Verified
+#instructions:              50
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    19
+#edges:                     23
+
+INITIAL:
+Stateparts:
+RDI
+RSI == 0x2004
+(SSP_Reg RDI,SSP_Reg RSI): Separate
+(SSP_Reg RSI,SSP_Reg RDI): Separate
+
+Return behavior: returning with
+RIP := [RSP_0x1270_0, 8]_0
+RAX := top
+RCX := top
+RDI := {RDI_0,b8(Bot[c|getc|])}
+RSI := 0x2004
+RSP := (RSP_0x1270_0 + 8)
+RBP := RBP_0
+[RSP_0x1270,8] := [RSP_0x1270_0, 8]_0
+[RSP_0x1270 - 0x20,4] := 0
+[RSP_0x1270 - 0x1c,4] := {[(RSP_0x1270_0 - 28), 4]_0,b32(Bot[c|getc|])}
+[RSP_0x1270 - 0x18,8] := RDI_0
+[RSP_0x1270 - 0xc,4] := top
+[RSP_0x1270 - 0x8,8] := RBP_0
+[0x4068,8] := {[0x4068, 8]_0,([0x4068, 8]_0 + 1)}
+
+
+
+
+

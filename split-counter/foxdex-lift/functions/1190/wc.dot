@@ -1,0 +1,28 @@
+diGraph wc{
+	wc_0  [style=filled fillcolor="#20FF20" fontcolor="#ffffff" shape=oval label="0 [1190,11a7]"]
+	wc_1  [style=filled fillcolor="#FFC040" fontcolor="#000000" shape=oval label="1 [11ac,11b5]"]
+	wc_2  [style=filled fillcolor="#FF40FF" fontcolor="#ffffff" shape=oval label="2 [11bb,11c8]"]
+	wc_3  [style=filled fillcolor="#C080FF" fontcolor="#ffffff" shape=oval label="3 [11d2,11d9]"]
+	wc_4  [style=filled fillcolor="#008000" fontcolor="#ffffff" shape=oval label="4 [11cd,11cd]"]
+	wc_5  [style=filled fillcolor="#00FFC0" fontcolor="#ffffff" shape=oval label="5 [11e9,11ec]"]
+	wc_6  [style=filled fillcolor="#00FFC0" fontcolor="#ffffff" shape=oval label="6 [11f2,11f2]"]
+	wc_7  [style=filled fillcolor="#FFFFC0" fontcolor="#000000" shape=oval label="7 [11f7,11fb]"]
+	wc_8  [style=filled fillcolor="#00FFC0" fontcolor="#ffffff" shape=oval label="8 [11e0,11e4]"]
+	wc_9  [style=filled fillcolor="#C0C0C0" fontcolor="#000000" shape=oval label="9 [1200,120e]"]
+	wc_a  [style=filled fillcolor="#004000" fontcolor="#ffffff" shape=oval label="10 [1213,122e]"]
+	wc_b  [style=filled fillcolor="#800080" fontcolor="#ffffff" shape=oval label="11 [1231,1236]"]
+
+	wc_0 -> wc_1
+	wc_1 -> wc_2
+	wc_1 -> wc_3
+	wc_2 -> wc_4
+	wc_3 -> wc_8
+	wc_4 -> wc_b
+	wc_5 -> wc_6
+	wc_5 -> wc_7
+	wc_6 -> wc_8
+	wc_7 -> wc_9
+	wc_8 -> wc_5
+	wc_9 -> wc_a
+	wc_a -> wc_b
+}

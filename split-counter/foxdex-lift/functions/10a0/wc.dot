@@ -1,0 +1,6 @@
+diGraph wc{
+	wc_0  [style=filled fillcolor="#20FF20" fontcolor="#ffffff" shape=oval label="0 [10a0,10bf]"]
+	wc_1  [style=filled fillcolor="#C0C0C0" fontcolor="#000000" shape=invhouse label="1 [10c5,10c5]"]
+
+	wc_0 -> wc_1
+}

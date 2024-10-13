@@ -1,0 +1,17 @@
+#instructions             (number of covered instructions)                                = 208
+avgInstructionSize        (average instruction size)                                      = 4.0625
+#expectedInstructions     (expected number of instructions)                               = 218
+%instructionCoverage      (estimate of percentage of covered instructions)                = 95.41
+#memWrites                (total number of instructions writing to memory)                = 22
+pointerDesignations       (A, C, C+U, U)                                                  = [("A",0.0),("C",100.0),("C+U",0.0),("U",0.0)]
+%resolvedMemWrites        (percentage of pointers that are assigned a non-trivial domain) = 100.0
+specifityMetric           (weighted mean of pointer designations)                         = 100.0
+#functions                (total number of functions)                                     = 16
+#functions_verified       (total number of verified functions)                            = 16
+#functions_unresolved     (total number of functions with unresolved indirections)        = 0
+#functions_verif_error    (total number of functions with verification error)             = 0
+#resolved_jumps           (total number of resolved jumps)                                = 2
+#resolved_calls           (total number of resolved calls)                                = 0
+#unresolved_jumps         (total number of unresolved jumps)                              = 0
+#unresolved_calls         (total number of unresolved calls)                              = 0
+runningTime               (Running time in HH:MM:SS)                                      = 0:0:1

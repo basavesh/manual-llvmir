@@ -1,0 +1,28 @@
+Function entry:             1030
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+INITIAL:
+Stateparts:
+RDI
+RSI == 0x2004
+(SSP_Reg RDI,SSP_Reg RSI): Separate
+(SSP_Reg RSI,SSP_Reg RDI): Separate
+
+Return behavior: returning with
+RIP := [RSP_fclose_0, 8]_0
+RAX := Bot[c|fclose|]
+RDI := RDI_0
+RSI := 0x2004
+RSP := (RSP_fclose_0 + 8)
+[RSP_fclose,8] := [RSP_fclose_0, 8]_0
+
+
+
+
+

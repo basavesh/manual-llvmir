@@ -1,0 +1,28 @@
+Function entry:             1350
+Verification result:        Verified
+#instructions:              14
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    2
+#edges:                     1
+
+INITIAL:
+Stateparts:
+RSI == 0x2004
+
+Return behavior: returning with
+RIP := [RSP_0x1350_0, 8]_0
+RAX := (b32([([malloc@1080(), 8]_0 + Bot[c||]), 2]_0) & 1024)
+RCX := top
+RSI := 0x2004
+RSP := (RSP_0x1350_0 + 8)
+RBP := RBP_0
+[RSP_0x1350,8] := [RSP_0x1350_0, 8]_0
+[RSP_0x1350 - 0x9,1] := top
+[RSP_0x1350 - 0x8,8] := RBP_0
+
+
+
+
+

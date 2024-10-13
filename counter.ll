@@ -79,7 +79,7 @@ define dso_local void @L15fa_counter(ptr %0) {
     store i64 0, ptr @gdx38, align 8  ; @0x38
     store i64 0, ptr @gdx28, align 8  ; @0x28
     store i64 0, ptr @gdx30, align 8  ; @0x30
-    br lable %11 
+    br label %11
 
 11: ; equivalent to L15fa_5;
     ; MOV RAX, qword [RBP - 0x8]

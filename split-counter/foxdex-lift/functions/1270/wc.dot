@@ -1,0 +1,45 @@
+diGraph wc{
+	wc_0  [style=filled fillcolor="#20FF20" fontcolor="#ffffff" shape=oval label="0 [1270,1287]"]
+	wc_1  [style=filled fillcolor="#4000C0" fontcolor="#ffffff" shape=oval label="1 [128c,128f]"]
+	wc_2  [style=filled fillcolor="#000080" fontcolor="#ffffff" shape=oval label="2 [1295,129c]"]
+	wc_3  [style=filled fillcolor="#8000C0" fontcolor="#ffffff" shape=oval label="3 [12a1,12a1]"]
+	wc_4  [style=filled fillcolor="#C00000" fontcolor="#ffffff" shape=oval label="4 [12af,12b5]"]
+	wc_5  [style=filled fillcolor="#C00000" fontcolor="#ffffff" shape=oval label="5 [12bb,12c1]"]
+	wc_6  [style=filled fillcolor="#C0C000" fontcolor="#ffffff" shape=oval label="6 [12eb,12eb]"]
+	wc_7  [style=filled fillcolor="#C00000" fontcolor="#ffffff" shape=oval label="7 [12c6,12c9]"]
+	wc_8  [style=filled fillcolor="#C0FF00" fontcolor="#000000" shape=oval label="8 [12cf,12e1]"]
+	wc_9  [style=filled fillcolor="#C00000" fontcolor="#ffffff" shape=oval label="9 [12e6,12e6]"]
+	wc_a  [style=filled fillcolor="#C00000" fontcolor="#ffffff" shape=oval label="10 [12a6,12aa]"]
+	wc_b  [style=filled fillcolor="#800040" fontcolor="#ffffff" shape=oval label="11 [12fa,1300]"]
+	wc_c  [style=filled fillcolor="#408040" fontcolor="#ffffff" shape=oval label="12 [1329,1335]"]
+	wc_d  [style=filled fillcolor="#800040" fontcolor="#ffffff" shape=oval label="13 [1305,1308]"]
+	wc_e  [style=filled fillcolor="#4000FF" fontcolor="#ffffff" shape=oval label="14 [130e,130e]"]
+	wc_f  [style=filled fillcolor="#800040" fontcolor="#ffffff" shape=oval label="15 [1313,131c]"]
+	wc_10  [style=filled fillcolor="#800040" fontcolor="#ffffff" shape=oval label="16 [1321,1324]"]
+	wc_11  [style=filled fillcolor="#800040" fontcolor="#ffffff" shape=oval label="17 [12f0,12f4]"]
+	wc_12  [style=filled fillcolor="#008080" fontcolor="#ffffff" shape=oval label="18 [1338,1340]"]
+
+	wc_0 -> wc_1
+	wc_1 -> wc_2
+	wc_1 -> wc_3
+	wc_2 -> wc_12
+	wc_3 -> wc_a
+	wc_4 -> wc_5
+	wc_4 -> wc_6
+	wc_5 -> wc_7
+	wc_6 -> wc_11
+	wc_7 -> wc_8
+	wc_7 -> wc_9
+	wc_8 -> wc_6
+	wc_9 -> wc_a
+	wc_a -> wc_4
+	wc_b -> wc_d
+	wc_c -> wc_12
+	wc_d -> wc_e
+	wc_d -> wc_f
+	wc_e -> wc_c
+	wc_f -> wc_10
+	wc_10 -> wc_11
+	wc_11 -> wc_b
+	wc_11 -> wc_c
+}

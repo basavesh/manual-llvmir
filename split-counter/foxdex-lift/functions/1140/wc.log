@@ -1,0 +1,25 @@
+Function entry:             1140
+Verification result:        Verified
+#instructions:              14
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    6
+#edges:                     6
+
+
+
+Return behavior: returning with
+RIP := [RSP_0x1140_0, 8]_0
+RAX := {0x4058,RAX_0,[0x3fe0, 8]_0}
+RDI := {0x4058,RDI_0}
+RSP := (RSP_0x1140_0 + 8)
+RBP := RBP_0
+[RSP_0x1140,8] := [RSP_0x1140_0, 8]_0
+[RSP_0x1140 - 0x8,8] := {RBP_0,[(RSP_0x1140_0 - 8), 8]_0}
+[0x4058,1] := {1,[0x4058, 1]_0}
+
+
+
+
+
