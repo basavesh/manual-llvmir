@@ -4,8 +4,8 @@ target triple = "x86_64-pc-linux-gnu"
 
 @ro0x2004 = private unnamed_addr constant [2 x i8] c"r\00", align 1
 @ro0x2006 = private unnamed_addr constant [23 x i8] c"cannot open file `%s'\0A\00", align 1
-@bss0x4060 = external global i64, align 8
-@bss0x4068 = external global i64, align 8
+@wcount = external global i64, align 8          ; had to rename as it is extern global variable and it should match
+@total_wcount = external global i64, align 8    ; same as above comment
 
 ; the below assumptions doesn't hold if the frame pointer is omitted.
 ; assumptions about the stack layout and the variables
@@ -90,7 +90,7 @@ br label %25
 ;   LEA RAX, [RELA_.bss_0x4058(0x10)]    ; 0x4068 --> L_.bss_0x4058 + 0x10
 ;   There is som global data at 0x4068
 ;   MOV qword [RAX], 0x0
-store i64 0, ptr @bss0x4068
+store i64 0, ptr @wcount
 br label %12
 
 
@@ -134,7 +134,7 @@ br label %12
 %20 = load ptr, ptr %2, align 8
 ;   LEA RAX, [RELA_.bss_0x4058(0x10)]    ; 0x4068 --> L_.bss_0x4058 + 0x10 ;
 ;   MOV RSI, qword [RAX] ; 2nd argument
-%21 = load i64, ptr @bss0x4068
+%21 = load i64, ptr @wcount
 ;   CALL report    ; 0x1240 --> report
 call void @report(ptr %20, i64 %21)
 
@@ -144,16 +144,16 @@ call void @report(ptr %20, i64 %21)
 ;   MOV RCX, qword [RAX]
 ;   With the reference, I have been able to merge these two, 
 ;   but I feel these two merges can be easily automated
-  %22 = load i64, ptr @bss0x4068, align 8
+  %22 = load i64, ptr @wcount, align 8
 
 
 ;   LEA RAX, [RELA_.bss_0x4058(0x8)]    ; 0x4060 --> L_.bss_0x4058 + 0x8
-  %23 = load i64, ptr @bss0x4060, align 8
+  %23 = load i64, ptr @total_wcount, align 8
 ;   ADD RCX, qword [RAX]
   %24 = add i64 %23, %22
 
 ;   LEA RAX, [RELA_.bss_0x4058(0x8)]    ; 0x4060 --> L_.bss_0x4058 + 0x8
-  store i64 %24, ptr @bss0x4060
+  store i64 %24, ptr @total_wcount
 ;   MOV qword [RAX], RCX
   br label %25
 
