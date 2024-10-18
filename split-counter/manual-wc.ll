@@ -304,3 +304,58 @@ define dso_local i32 @getword(ptr %0) {
 ;   RET
     ret i32 %43
 }
+
+; ; ----------------
+; ; Function: isword
+; ; ----------------
+; ; Entry 1350; block 0; address 1350
+; isword:
+; static int isword (unsigned char c)       ; If I know this signature, I can recover a lot, Else, I may not be
+define i32 @isword(i8 %0) {
+;   PUSH RBP
+;   MOV RBP, RSP
+;   SUB RSP, 0x10           ; not sure why it is allocating 16 bytes on the stack
+
+;   [RBP - 0x1] and byte access, so let's allocate 1 byte for this,
+    ; however I don't see any other local variables and 
+    ; not sure why stack space is 16 bytes at this moment
+    %2 = alloca i8, align 1
+
+;   MOV AL, DIL             ; move  a byte 
+;   MOV byte [RBP - 0x1], AL
+;   combining the above two instruction
+    store i8 %0, ptr %2, align 1
+
+;   CALL __ctype_b_loc wrt ..plt
+    %3 = call ptr @__ctype_b_loc
+
+; ; Entry 1350; block 1; address 1363
+; L1350_1:
+;   MOV RAX, qword [RAX]
+    %4 = load ptr, ptr %3, align 8  ; no idea what this type of rax would be.
+                                    ; it is either i64 or ptr
+
+;   MOVZX ECX, byte [RBP - 0x1]
+    %5 = load i8, ptr %2, align 1
+    %6 = zext i8 %5 to i32
+
+;   MOVSXD RCX, ECX
+    %7 = sext i32 %6 to i64
+
+;   MOVZX EAX, word [RAX + RCX * 2]         ; need to understand more on this addressing mode and how to recover it to LLVM-IR level
+;   how is this RCX * 2 is being handled at this moment?
+;   the above needs to be split enough to easily translated into 
+    %8 = getelementptr inbounds i16, ptr %4, i64 %7 
+    %9 = load i16, ptr %8, align 2
+    %10 = zext i16 %9 to i32
+
+
+;   AND EAX, 0x400
+    %11 = and i32 %10, 1024
+
+
+;   ADD RSP, 0x10
+;   POP RBP
+;   RET
+    ret i32 %11
+}
