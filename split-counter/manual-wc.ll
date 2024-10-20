@@ -1,6 +1,11 @@
 target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu"
 
+@total_wcount = dso_local global i64 0, align 8
+@rox201d = private unnamed_addr constant [9 x i8] c"%6lu %s\0A\00", align 1
+@wcount = dso_local global i64 0, align 8
+@ro0x2026 = private unnamed_addr constant [25 x i8] c"usage: wc FILE [FILE...]\00", align 1
+@rox203f = private unnamed_addr constant [6 x i8] c"total\00", align 1
 
 
 ; the below assumptions doesn't hold if the frame pointer is omitted.
@@ -172,7 +177,7 @@ define dso_local i32 @getword(ptr %0) {
 
 ;   CMP EAX, 0xffffffff                         ; ok this is confusing, I don't know if I should convert it to -1 or keep it as it is
 ;   JE L1270_6    ; 0x12eb --> L1270_6
-    %14 = icmp new i32 %13, -1
+    %14 = icmp ne i32 %13, -1
     br i1 %14, label %15, label %24
 
 ; ; Entry 1270; block 5; address 12bb
@@ -198,13 +203,13 @@ define dso_local i32 @getword(ptr %0) {
 ; L1270_8:
 20:
 ;   MOV RAX, qword [RELA_.bss_0x4058(0x10)]    ; 0x4068 --> L_.bss_0x4058 + 0x10
-    %21 = load i64, ptr @bss0x4068
+    %21 = load i64, ptr @wcount
 
 ;   ADD RAX, 0x1
     %22 = add i64 %21, 1
 
 ;   MOV qword [RELA_.bss_0x4058(0x10)], RAX    ; 0x4068 --> L_.bss_0x4058 + 0x10
-    store i64 %22, ptr @bss0x4068, align 8
+    store i64 %22, ptr @wcount, align 8
 
 ;   JMP L1270_6    ; 0x12eb --> L1270_6
     br label %24
@@ -266,7 +271,7 @@ define dso_local i32 @getword(ptr %0) {
 ;   MOV RDI, qword [RBP - 0x10]
     %36 = load ptr, ptr %3, align 8
 ;   CALL getc wrt ..plt
-    37 = call i32 @getc(ptr %36)
+    %37 = call i32 @getc(ptr %36)
 
 ; ; Entry 1270; block 16; address 1321
 ; L1270_16:
@@ -327,7 +332,7 @@ define i32 @isword(i8 %0) {
     store i8 %0, ptr %2, align 1
 
 ;   CALL __ctype_b_loc wrt ..plt
-    %3 = call ptr @__ctype_b_loc
+    %3 = call ptr @__ctype_b_loc()
 
 ; ; Entry 1350; block 1; address 1363
 ; L1350_1:
@@ -359,3 +364,159 @@ define i32 @isword(i8 %0) {
 ;   RET
     ret i32 %11
 }
+
+
+
+define dso_local i32 @main(i32 %0, ptr %1) {
+; ; --------------
+; ; Function: main
+; ; --------------
+; ; Entry 1380; block 0; address 1380
+; main:
+;   PUSH RBP
+;   MOV RBP, RSP
+;   SUB RSP, 0x20                       ; 32 bytes
+
+;   [RBP - 0x4]
+    %3 = alloca i32, align 4
+
+;   [RBP - 0x8]
+    %4 = alloca i32, align 4
+
+;   [RBP - 0x10]
+    %5 = alloca ptr, align 8            ; i64 or ptr??
+
+;   [RBP - 0x14]
+    %6 = alloca i32, align 4
+
+;   The initial idea is to just create spaces for all the stack variables,
+;   merge them later if they turn out to be arrays/structs
+
+;   MOV dword [RBP - 0x4], 0x0
+    store i32 0, ptr %3, align 4
+
+;   MOV dword [RBP - 0x8], EDI
+    store ptr %1, ptr %4, align 4
+
+;   MOV qword [RBP - 0x10], RSI
+    store ptr %1, ptr %5, align 8
+
+;   CMP dword [RBP - 0x8], 0x2
+;   JGE L1380_2    ; 0x13ba --> L1380_2
+    %7 = load i32, ptr %4, align 4
+    %8 = icmp slt i32 %7, 2
+    br  i1 %8, label %9, label %11
+
+; ; Entry 1380; block 1; address 13a0
+; L1380_1:
+9:
+;   LEA RDI, [RELA_.rodata_0x2000(0x26)]    ; 0x2026 --> L_.rodata_0x2000 + 0x26
+;   MOV AL, 0x0
+;   CALL printf wrt ..plt
+    %10 = call i32 (ptr, ...) @printf(ptr @ro0x2026)
+
+; ; Entry 1380; block 3; address 13ae
+; L1380_3:
+;   MOV dword [RBP - 0x4], 0xffffffff
+    store i32 -1, ptr %3, align 4
+
+;   JMP L1380_10    ; 0x1410 --> L1380_10
+    br label %31
+
+; ; Entry 1380; block 2; address 13ba
+; L1380_2:
+11:
+;   MOV dword [RBP - 0x14], 0x1
+    store i32 1, ptr %6, align 4
+    br label %12
+
+; ; Entry 1380; block 7; address 13c1
+; L1380_7:
+12:
+;   MOV EAX, dword [RBP - 0x14]
+    %13 = load i32, ptr %6, align 4
+
+;   CMP EAX, dword [RBP - 0x8]
+;   JGE L1380_5    ; 0x13ec --> L1380_5
+    %14 = load i32, ptr %4, align 4
+    %15 = icmp slt i32 %13, %14
+    br i1 %15, label %16, label %25
+
+; ; Entry 1380; block 4; address 13cd
+; L1380_4:
+16:
+;   MOV RAX, qword [RBP - 0x10]
+    %17 = load ptr, ptr %5, align 8
+
+;   MOVSXD RCX, dword [RBP - 0x14]
+    %18 = load i32, ptr %6, align 4
+    %19 = sext i32 %18 to i64
+
+;   MOV RDI, qword [RAX + RCX * 8]
+;   CALL counter    ; 0x1190 --> counter
+    %20 = getelementptr inbounds ptr, ptr %17, i64 %19
+    %21 = load ptr, ptr %20, align 8
+    call void @counter(ptr %21)
+    br label %22
+
+; ; Entry 1380; block 6; address 13de
+; L1380_6:
+22:
+;   MOV EAX, dword [RBP - 0x14]
+    %23 = load i32, ptr %6, align 4
+
+;   ADD EAX, 0x1
+    %24 = add i32 %23, 1
+
+;   MOV dword [RBP - 0x14], EAX
+    store i32 %24, ptr %6, align 4
+
+;   JMP L1380_7    ; 0x13c1 --> L1380_7
+    br label %12
+
+; ; Entry 1380; block 5; address 13ec
+; L1380_5:
+25:
+;   CMP dword [RBP - 0x8], 0x2
+;   JLE L1380_9    ; 0x1409 --> L1380_9
+    %26 = load i32, ptr %4, align 4
+    %27 = icmp sgt i32 %26, 2
+    br i1 %27, label %28, label %30 
+
+; ; Entry 1380; block 8; address 13f6
+; L1380_8:
+28:
+;   MOV RSI, qword [RELA_.bss_0x4058(0x8)]    ; 0x4060 --> L_.bss_0x4058 + 0x8
+    %29 = load i64, ptr @total_wcount, align 8
+
+;   LEA RDI, [RELA_.rodata_0x2000(0x3f)]    ; 0x203f --> L_.rodata_0x2000 + 0x3f
+;   CALL report    ; 0x1240 --> report
+    call void @report(ptr @rox203f, i64 %29)
+    br label %30
+
+; ; Entry 1380; block 9; address 1409
+; L1380_9:
+30:
+;   MOV dword [RBP - 0x4], 0x0
+    store i32 0, ptr %3, align 4
+    br label %31
+
+; ; Entry 1380; block 10; address 1410
+; L1380_10:
+31:
+;   MOV EAX, dword [RBP - 0x4]
+    %32 = load i32, ptr %3, align 4
+
+;   ADD RSP, 0x20
+;   POP RBP
+;   RET
+    ret i32 %32
+}
+
+declare void @counter(ptr)
+
+declare ptr @__ctype_b_loc()
+
+declare i32 @feof(ptr)
+
+declare i32 @getc(ptr)
