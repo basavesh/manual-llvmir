@@ -1,0 +1,23 @@
+Function entry:             11a0
+Verification result:        Verified
+#instructions:              16
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    4
+#edges:                     4
+
+
+
+Return behavior: returning with
+RIP := [RSP_0x11a0_0, 8]_0
+RAX := {0,[0x3fd8, 8]_0}
+RDI := 0x4050
+RSI := 0
+RSP := (RSP_0x11a0_0 + 8)
+[RSP_0x11a0,8] := [RSP_0x11a0_0, 8]_0
+
+
+
+
+

@@ -1,0 +1,6 @@
+diGraph server{
+	server_0  [style=filled fillcolor="#20FF20" fontcolor="#ffffff" shape=oval label="0 [1120,113f]"]
+	server_1  [style=filled fillcolor="#C0C0C0" fontcolor="#000000" shape=invhouse label="1 [1145,1145]"]
+
+	server_0 -> server_1
+}

@@ -1,0 +1,21 @@
+Function entry:             10c0
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+
+
+Return behavior: returning with
+RIP := [RSP_listen_0, 8]_0
+RAX := Bot[c|listen|]
+RSP := (RSP_listen_0 + 8)
+[RSP_listen,8] := [RSP_listen_0, 8]_0
+
+
+
+
+

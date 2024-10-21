@@ -1,0 +1,32 @@
+Function entry:             1050
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+INITIAL:
+Stateparts:
+RAX, RDI
+RDX == 0x2004
+(SSP_Reg RAX,SSP_Reg RDX): Separate
+(SSP_Reg RAX,SSP_Reg RDI): Unknown
+(SSP_Reg RDX,SSP_Reg RAX): Separate
+(SSP_Reg RDX,SSP_Reg RDI): Separate
+(SSP_Reg RDI,SSP_Reg RAX): Unknown
+(SSP_Reg RDI,SSP_Reg RDX): Separate
+
+Return behavior: returning with
+RIP := [RSP_strlen_0, 8]_0
+RAX := Bot[c|strlen|]
+RDX := 0x2004
+RDI := RDI_0
+RSP := (RSP_strlen_0 + 8)
+[RSP_strlen,8] := [RSP_strlen_0, 8]_0
+
+
+
+
+

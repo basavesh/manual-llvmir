@@ -1,0 +1,16 @@
+Function entry:             10c0
+Verification result:        Verified (with assumptions)
+#instructions:              13
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    2
+#edges:                     1
+
+
+
+Return behavior: terminating
+
+FUNCTION POINTERS USED:
+@10d8: function pointers [11b0]
+

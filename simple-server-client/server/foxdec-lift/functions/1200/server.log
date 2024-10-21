@@ -1,0 +1,23 @@
+Function entry:             1200
+Verification result:        Verified
+#instructions:              16
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    4
+#edges:                     4
+
+
+
+Return behavior: returning with
+RIP := [RSP_0x1200_0, 8]_0
+RAX := {0,[0x3fd8, 8]_0}
+RDI := 0x4080
+RSI := 0
+RSP := (RSP_0x1200_0 + 8)
+[RSP_0x1200,8] := [RSP_0x1200_0, 8]_0
+
+
+
+
+

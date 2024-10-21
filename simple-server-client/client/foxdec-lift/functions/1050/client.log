@@ -1,0 +1,24 @@
+Function entry:             1050
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+INITIAL:
+Stateparts:
+RDI
+
+Return behavior: returning with
+RIP := [RSP_fputs_0, 8]_0
+RAX := Bot[c|fputs|]
+RDI := RDI_0
+RSP := (RSP_fputs_0 + 8)
+[RSP_fputs,8] := [RSP_fputs_0, 8]_0
+
+
+
+
+

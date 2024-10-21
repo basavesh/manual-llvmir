@@ -1,0 +1,24 @@
+Function entry:             10d0
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+INITIAL:
+Stateparts:
+RSI
+
+Return behavior: returning with
+RIP := [RSP_bind_0, 8]_0
+RAX := Bot[c|bind|]
+RSI := RSI_0
+RSP := (RSP_bind_0 + 8)
+[RSP_bind,8] := [RSP_bind_0, 8]_0
+
+
+
+
+

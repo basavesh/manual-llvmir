@@ -1,0 +1,11 @@
+diGraph client{
+	client_0  [style=filled fillcolor="#20FF20" fontcolor="#ffffff" shape=oval label="0 [10f0,1101]"]
+	client_1  [style=filled fillcolor="#C00080" fontcolor="#ffffff" shape=oval label="1 [1103,110d]"]
+	client_2  [style=filled fillcolor="#400040" fontcolor="#ffffff" shape=oval label="2 [1118,1118]"]
+	client_3  [style=filled fillcolor="#C0C0C0" fontcolor="#000000" shape=oval label="3 [110f,110f]"]
+
+	client_0 -> client_1
+	client_0 -> client_2
+	client_1 -> client_2
+	client_1 -> client_3
+}

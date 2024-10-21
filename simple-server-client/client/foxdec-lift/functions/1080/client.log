@@ -1,0 +1,24 @@
+Function entry:             1080
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+INITIAL:
+Stateparts:
+RDX
+
+Return behavior: returning with
+RIP := [RSP_inet_pton_0, 8]_0
+RAX := Bot[c|inet_pton|]
+RDX := RDX_0
+RSP := (RSP_inet_pton_0 + 8)
+[RSP_inet_pton,8] := [RSP_inet_pton_0, 8]_0
+
+
+
+
+

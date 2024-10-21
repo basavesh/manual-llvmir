@@ -1,0 +1,24 @@
+Function entry:             10b0
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+INITIAL:
+Stateparts:
+RDI == 0x4048
+
+Return behavior: returning with
+RIP := [RSP___cxa_finalize_0, 8]_0
+RAX := Bot[c|__cxa_finalize|]
+RDI := 0x4048
+RSP := (RSP___cxa_finalize_0 + 8)
+[RSP___cxa_finalize,8] := [RSP___cxa_finalize_0, 8]_0
+
+
+
+
+

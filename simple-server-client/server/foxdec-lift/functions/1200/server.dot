@@ -1,0 +1,11 @@
+diGraph server{
+	server_0  [style=filled fillcolor="#20FF20" fontcolor="#ffffff" shape=oval label="0 [1200,11a2]"]
+	server_1  [style=filled fillcolor="#C00080" fontcolor="#ffffff" shape=oval label="1 [11a4,11ae]"]
+	server_2  [style=filled fillcolor="#400040" fontcolor="#ffffff" shape=oval label="2 [11b8,11b8]"]
+	server_3  [style=filled fillcolor="#C0C0C0" fontcolor="#000000" shape=oval label="3 [11b0,11b0]"]
+
+	server_0 -> server_1
+	server_0 -> server_2
+	server_1 -> server_2
+	server_1 -> server_3
+}

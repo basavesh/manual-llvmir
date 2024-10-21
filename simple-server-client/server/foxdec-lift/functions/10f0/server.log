@@ -1,0 +1,24 @@
+Function entry:             10f0
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+INITIAL:
+Stateparts:
+RSI
+
+Return behavior: returning with
+RIP := [RSP_sleep_0, 8]_0
+RAX := Bot[c|sleep|]
+RSI := RSI_0
+RSP := (RSP_sleep_0 + 8)
+[RSP_sleep,8] := [RSP_sleep_0, 8]_0
+
+
+
+
+

@@ -1,0 +1,26 @@
+Function entry:             1040
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+INITIAL:
+Stateparts:
+RAX, RDI
+(SSP_Reg RAX,SSP_Reg RDI): Unknown
+(SSP_Reg RDI,SSP_Reg RAX): Unknown
+
+Return behavior: returning with
+RIP := [RSP_ctime_0, 8]_0
+RAX := Bot[c|ctime|]
+RDI := RDI_0
+RSP := (RSP_ctime_0 + 8)
+[RSP_ctime,8] := [RSP_ctime_0, 8]_0
+
+
+
+
+

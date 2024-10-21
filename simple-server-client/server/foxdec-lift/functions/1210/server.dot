@@ -1,0 +1,35 @@
+diGraph server{
+	server_0  [style=filled fillcolor="#20FF20" fontcolor="#ffffff" shape=oval label="0 [1210,1243]"]
+	server_1  [style=filled fillcolor="#40C080" fontcolor="#ffffff" shape=oval label="1 [1248,1259]"]
+	server_2  [style=filled fillcolor="#C00080" fontcolor="#ffffff" shape=oval label="2 [125e,126f]"]
+	server_3  [style=filled fillcolor="#FF00C0" fontcolor="#ffffff" shape=oval label="3 [1274,127c]"]
+	server_4  [style=filled fillcolor="#C0C0C0" fontcolor="#000000" shape=oval label="4 [1281,1289]"]
+	server_5  [style=filled fillcolor="#FF4000" fontcolor="#ffffff" shape=oval label="5 [128e,129e]"]
+	server_6  [style=filled fillcolor="#400040" fontcolor="#ffffff" shape=oval label="6 [12a3,12ab]"]
+	server_7  [style=filled fillcolor="#80FFFF" fontcolor="#000000" shape=oval label="7 [12b0,12ba]"]
+	server_8  [style=filled fillcolor="#80FFFF" fontcolor="#000000" shape=oval label="8 [12bf,12c6]"]
+	server_9  [style=filled fillcolor="#80FFFF" fontcolor="#000000" shape=oval label="9 [12cb,12e7]"]
+	server_a  [style=filled fillcolor="#80FFFF" fontcolor="#000000" shape=oval label="10 [12ec,1304]"]
+	server_b  [style=filled fillcolor="#80FFFF" fontcolor="#000000" shape=oval label="11 [1309,1327]"]
+	server_c  [style=filled fillcolor="#80FFFF" fontcolor="#000000" shape=oval label="12 [132c,133c]"]
+	server_d  [style=filled fillcolor="#80FFFF" fontcolor="#000000" shape=oval label="13 [1341,1344]"]
+	server_e  [style=filled fillcolor="#80FFFF" fontcolor="#000000" shape=oval label="14 [1349,134e]"]
+	server_f  [style=filled fillcolor="#80FFFF" fontcolor="#000000" shape=oval label="15 [1353,1353]"]
+
+	server_0 -> server_1
+	server_1 -> server_2
+	server_2 -> server_3
+	server_3 -> server_4
+	server_4 -> server_5
+	server_5 -> server_6
+	server_6 -> server_7
+	server_7 -> server_8
+	server_8 -> server_9
+	server_9 -> server_a
+	server_a -> server_b
+	server_b -> server_c
+	server_c -> server_d
+	server_d -> server_e
+	server_e -> server_f
+	server_f -> server_7
+}

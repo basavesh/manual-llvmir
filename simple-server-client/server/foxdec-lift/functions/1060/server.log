@@ -1,0 +1,21 @@
+Function entry:             1060
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+
+
+Return behavior: returning with
+RIP := [RSP_htons_0, 8]_0
+RAX := Bot[c|htons|]
+RSP := (RSP_htons_0 + 8)
+[RSP_htons,8] := [RSP_htons_0, 8]_0
+
+
+
+
+

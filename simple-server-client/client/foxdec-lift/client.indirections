@@ -1,0 +1,2 @@
+110f fromList [_ITM_deregisterTMCloneTable]
+1150 fromList [_ITM_registerTMCloneTable]

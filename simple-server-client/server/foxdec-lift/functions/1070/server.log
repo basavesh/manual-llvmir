@@ -1,0 +1,28 @@
+Function entry:             1070
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+INITIAL:
+Stateparts:
+RDI
+RDX == 0x2004
+(SSP_Reg RDX,SSP_Reg RDI): Separate
+(SSP_Reg RDI,SSP_Reg RDX): Separate
+
+Return behavior: returning with
+RIP := [RSP_snprintf_0, 8]_0
+RAX := Bot[c|snprintf|]
+RDX := 0x2004
+RDI := RDI_0
+RSP := (RSP_snprintf_0 + 8)
+[RSP_snprintf,8] := [RSP_snprintf_0, 8]_0
+
+
+
+
+

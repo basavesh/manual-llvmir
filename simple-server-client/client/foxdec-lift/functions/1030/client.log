@@ -1,0 +1,27 @@
+Function entry:             1030
+Verification result:        Verified
+#instructions:              1
+#assertions:                0
+#unresolved indirect jumps: 0
+#unresolved indirect calls: 0
+#blocks:                    1
+#edges:                     0
+
+INITIAL:
+Stateparts:
+RAX
+RDI == 0x1388
+(SSP_Reg RAX,SSP_Reg RDI): Separate
+(SSP_Reg RDI,SSP_Reg RAX): Separate
+
+Return behavior: returning with
+RIP := [RSP_htons_0, 8]_0
+RAX := Bot[c|htons|]
+RDI := 0x1388
+RSP := (RSP_htons_0 + 8)
+[RSP_htons,8] := [RSP_htons_0, 8]_0
+
+
+
+
+
